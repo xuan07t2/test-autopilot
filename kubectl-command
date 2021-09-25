@@ -1,0 +1,11 @@
+
+docker build -t xuan07t2/hello-world-golang .
+docker push xuan07t2/hello-world-golang
+
+docker run -it -ti -v %cd%:/root --volumes-from gcloud-config google/cloud-sdk
+gcloud container clusters list
+gcloud container clusters get-credentials autopilot-cluster-1 --region=us-central1
+
+
+kubectl apply --dry-run=server -k ./kubernetes/development
+kubectl apply --record=true -k ./kubernetes/development  --server-side

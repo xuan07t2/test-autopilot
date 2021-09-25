@@ -1,0 +1,5 @@
+namespace: line-vn
+
+resources:
+- configmap.yaml
+- cronjob.yaml

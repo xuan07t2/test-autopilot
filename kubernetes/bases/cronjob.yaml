@@ -1,0 +1,17 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: data-collect
+spec:
+  # Một phút chạy một Job
+  schedule: "*/1 * * * *"
+  # Số Job lưu lại
+  successfulJobsHistoryLimit: 3
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: hello-world-golang
+            image: xuan07t2/hello-world-golang            
+          restartPolicy: Never

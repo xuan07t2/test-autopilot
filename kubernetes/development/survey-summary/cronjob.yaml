@@ -1,0 +1,10 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  labels:
+    app: data-collect
+  name: data-collect
+spec:
+  jobTemplate:
+    spec:
+      activeDeadlineSeconds: 3600

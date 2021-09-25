@@ -1,0 +1,7 @@
+bases:
+  - ../../bases
+patches:
+  - configmap.yaml
+  - cronjob.yaml
+
+namePrefix: batch-vn-
